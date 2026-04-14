@@ -1,0 +1,22 @@
+{
+  "name": "LuxuryCarRentSystem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "",
+    "start": "nodemon index.ts"
+  },
+  "private": true,
+  "dependencies": {
+    "@types/express": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.0",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "mysql-import": "^5.0.26",
+    "typescript": "^5.8.3"
+  }
+}
