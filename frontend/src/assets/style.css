@@ -321,7 +321,9 @@ nav {
     background: radial-gradient(circle,rgba(0, 128, 0, 0.7) 0%, rgba(33, 138, 33, 0.7) 50%, rgba(32, 87, 32, 0.7) 100%);
     border: 3px solid rgba(2, 126, 2, 0.438);
     /* outer glow: x-offset y-offset blur spread color */
-    box-shadow: 0 0 30px 5px rgb(0 157 67 / 50%), 0 0 60px 10px rgba(46, 204, 113, 0.2);    
+    box-shadow: 0 0 30px 5px rgb(0 157 67 / 50%), 0 0 60px 10px rgba(46, 204, 113, 0.2);   
+    position: relative; /* Essential for ribbon positioning */
+    overflow: hidden; 
 }
 
 .dayps:hover {
@@ -371,6 +373,8 @@ nav {
     cursor: pointer;
     transition: transform 0.5s ease;
     background: transparent;
+    position: absolute;
+    bottom: 10px;
 }
 
 .gdpas {
@@ -383,6 +387,8 @@ nav {
     cursor: pointer;
     transition: transform 0.5s ease;
     background: transparent;
+    position: absolute;
+    bottom: 10px;
 }
 
 .gdpas:hover {
@@ -393,7 +399,39 @@ nav {
     background: white;
 }
 
+.ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ribbon span {
+  width: 200px;
+  background: var(--darkgreen); /* Your green color */
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 8px 0;
+  transform: rotate(45deg) translate(35px, -35px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.bsyval {
+    position: absolute;
+    right: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding:0px 5px;
+}
+
 #fleet {
     height: 100vh;
     width: 100%
 }
+
