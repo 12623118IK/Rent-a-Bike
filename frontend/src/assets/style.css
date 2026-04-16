@@ -174,6 +174,10 @@ nav {
 
 #how-it-works-cards {
     width: 100%;
+    height: 75%;
+    justify-content: center;
+    display: flex;
+    align-items: center
 }
 
 #how-it-works-cards-wrpr {
@@ -196,6 +200,15 @@ nav {
     position: relative;
 }
 
+#how-it-works-wrpr-text {
+    text-align: center;
+    color: var(--darkgreen);
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .card-line {
     width: 90%;
     border: 1px solid green;
@@ -208,11 +221,10 @@ nav {
 }
 
 .cards-btn {
-    position: absolute;
-    bottom: 10px;
     width: 100%;
     justify-content: center;
-    display: flex
+    display: flex;
+    margin-top: 40px;
 }
 
 .p-cards {
@@ -236,10 +248,113 @@ nav {
     font-size: 1.3rem;
     cursor: pointer;
     transition: transform 0.3s ease;
+    width: 90%;
 }
 
 .cards-btns-desgn:hover {
     color: white;
     background: green;
-    transform: scale(1.05);
+}
+
+.cards-ul {
+    padding-left: 20px;
+}
+
+.cards-ul li {
+    list-style: disc;
+    color: var(--darkgreen);
+    font-size: 1.2rem;
+    text-wrap: balance;
+}
+
+#pricing {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e8e8e8;
+}
+
+#pricing-wrpr {
+    width: 95%;
+    height: 90%;
+    border-radius: 15px;
+    border: 3px solid white;
+    background-image: url(/frontend/src/assets/images/pricing-background.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+#pricing-wrpr-text {
+    color: black;
+    text-align: center;
+}
+
+.pricing-card-strr {
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 10px;
+}
+
+.sngltrp {
+    border: 3px solid white;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(214, 214, 214, 0.9) 35%, rgba(176, 176, 176, 0.9) 100%);
+}
+
+.dayps {
+    background: radial-gradient(circle,rgba(0, 128, 0, 0.7) 0%, rgba(33, 138, 33, 0.7) 50%, rgba(32, 87, 32, 0.7) 100%);
+    border: 3px solid rgba(2, 126, 2, 0.438);
+}
+
+.p-trip {
+    font-size: 1.2rem;
+    margin: 0px;
+    margin-bottom: -10px;
+}
+
+.p-price {
+    font-size: 3rem;
+    margin: 0px;
+}
+
+.subscriptions-ul {
+    list-style-type: none;
+    padding: 0px;
+    font-size: 1rem;
+}
+
+.subscriptions-ul li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.whtic li {
+    color: white;
+}
+
+.whit {
+    border: 1px solid white;
+}
+
+.blck {
+    border: 1px solid black;
+}
+
+.price-btns-desgn {
+    border: 3px solid white;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    background: transparent;
+}
+
+.price-btns-desgn:hover {
+    background: white;
 }
