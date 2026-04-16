@@ -5,4 +5,4 @@ export {NotFound} from './NotFound.tsx';
 export {AddCars} from './AddCars.tsx';
 export {InfoCar} from './InfoCar.tsx';
 export {EditCar} from './EditCar.tsx';
-
+export {InfoBike} from './InfoBike.tsx';

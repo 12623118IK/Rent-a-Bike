@@ -3,10 +3,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luxury Car Rental</title>
+    <title>RentCycle</title>
     <link rel="icon" type="images/x-icon" href="public/favicon.ico">
+    <link rel="stylesheet" href="/frontend/src/assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Funnel+Display:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=directions_bike" />
   </head>
   <body>
+    <nav>
+      <div class="logo-title">
+        <a href="" style="text-decoration: none; display: flex;"><span id="bicycle-logo" class="material-symbols-outlined">directions_bike</span></a>
+        <div class="logo-div-name funnel-display"> 
+          <a href="" style="color: green; text-decoration: none;">Rent</a>
+          <a href="" style="color: var(--darkgreen); text-decoration: none;">Cycle</a>
+        </div>
+      </div>
+      <div id="nav-btns-dsad">
+        <div id="nav-btns-wrpr">
+          <button class="nav-btns nrmbtn" onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})">How It Works</button>
+          <button class="nav-btns nrmbtn">Pricing</button>
+          <button class="nav-btns nrmbtn">Fleet</button>
+          <button class="nav-btns nrmbtn">Locations</button>
+          <button class="nav-btns rentbtn">Rent a Bike</button>
+        </div>
+      </div>
+    </nav>
+    <div id="lndgpage-img">
+      <div id="ldngblur">
+        <div id="leftsdcwrpr">
+          <div><p class="vrnp" style="margin-bottom: -10px;">EXPLORE VARNA</p><p class="vrnp">ON TWO WHEELS</p></div>    
+          <div><p class="smlstxt">Instant bicycle rentals. Ride further, explore easier with <span style="text-decoration: underline;">RentCycle</span>. Fun, affordable & eco-friendly city bikes available 24/7. Your seaside adventure starts with a single pedal.</p></div>
+          <div><button class="nav-btns rentbtn">Find a Bike near you <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></svg></button></div>
+        </div>
+      </div>  
+    </div>
+
+    <div id="how-it-works">
+      <div id="how-it-works-wrpr">
+        <div id="how-it-works-wrpr-text">
+          <p>HOW IT WORKS?</p>
+          <p>SIMPLE STEPS TO YOUR NEXT ADVENTURE</p>
+        </div>
+        <div id="how-it-works-cards">
+          <div id="how-it-works-cards-wrpr">
+            <div class="how-it-works-card-strr">
+              <div class="cardsimg-algn">
+                <img class="cardsimg" src="/frontend/src/assets/images/card1img.png" alt="Reserve bike">
+              </div>
+              <p class="p-cards">LOCATE & RESERVE</p>
+              <div class="card-line"></div>
+              <ul>
+                <li>Find a bike on the map or reserve one in advance.</li>
+                <li>Check bike availability.</li>
+                <li>View nearby stations.</li>
+              </ul>
+              <div class="cards-btn">
+                <button class="cards-btns-desgn">VIEW MAP</button>
+              </div>
+            </div>
+
+            <div class="how-it-works-card-strr">
+              <div class="cardsimg-algn">
+                <img class="cardsimg" src="/frontend/src/assets/images/card2img.png" alt="Unlock ride">
+              </div>
+              <p class="p-cards">UNLOCK & START RIDE</p>
+              <div class="card-line"></div>
+              <ul>
+                <li>Use the app to scan and unlock your bike in seconds.</li>
+                <li>Unlock multiple bikes.</li>
+                <li>Start your timer.</li>
+              </ul>
+              <div class="cards-btn">
+                <button class="cards-btns-desgn">UNLOCK NOW</button>
+              </div>
+            </div>
+
+            <div class="how-it-works-card-strr">
+              <div class="cardsimg-algn">
+                <img class="cardsimg" src="/frontend/src/assets/images/card3img.png" alt="Explore">
+              </div>
+              <p class="p-cards">RIDE & EXPLORE</p>
+              <div class="card-line"></div>
+              <ul>
+                <li>Enjoy a smooth, eco-friendly ride across the city.</li>
+                <li>Helmets encouraged.</li>
+                <li>Discover new routes.</li>
+              </ul>
+              <div class="cards-btn">
+                <button class="cards-btns-desgn">FIND ROUTES</button>
+              </div>
+            </div>
+
+            <div class="how-it-works-card-strr">
+              <div class="cardsimg-algn">
+                <img class="cardsimg" src="/frontend/src/assets/images/card4img.png" alt="End ride">
+              </div>
+              <p class="p-cards">DOCK & END RIDE</p>
+              <div class="card-line"></div>
+              <ul>
+                <li>Park at a designated station and confirm your ride is ended.</li>
+                <li>Easy returns.</li>
+                <li>Check available slots.</li>
+              </ul>
+              <div class="cards-btn">
+                <button class="cards-btns-desgn">VIEW MAP</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
