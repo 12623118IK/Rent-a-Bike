@@ -358,7 +358,7 @@ nav {
 }
 
 .whit {
-    border: 1px solid #cdcdcd;
+    border: 1px solid white;
 }
 
 .blck {
@@ -432,6 +432,96 @@ nav {
 
 #fleet {
     height: 100vh;
-    width: 100%
+    width: 100%;
+    background-image: url(/frontend/src/assets/images/leaves-background.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: repeat;
+
 }
 
+#fllet-hero {
+    height: 35%;
+    width: 80%;
+    background-image: url(/frontend/src/assets/images/riding-pov.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 40% 60%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin: 0px auto;
+}
+
+#fllet-txt {
+    color: white;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    font-size: 3rem;
+}
+
+#fllet-txt p {
+    margin: 0px;
+}
+
+#secdn-part {
+    width: 85%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+
+}
+
+#left-side {
+    width: 15%;
+    height: 100%;
+    background: white;
+}
+
+#right-side {
+    width: 80%;
+    height: 100%;
+    background: white;
+}
+
+.lefts-sd-ul {
+    list-style-type: none;
+    padding: 0px;
+    font-size: 1.5rem;
+    color: var(--darkgreen);
+    width: min-content;
+}
+
+.lefts-sd-ul li {
+    cursor: pointer;
+    width: min-content;
+    margin: 15px 10px;
+    position: relative;
+}
+
+/* Creates the hidden line */
+.lefts-sd-ul li::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0); /* Starts hidden */
+  height: 2px; /* Line thickness */
+  bottom: -4px; /* Space between text and line */
+  left: 0;
+  background-color: currentColor; /* Matches the text color automatically */
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out; /* Animation speed */
+}
+
+/* Animates the line in on hover */
+.lefts-sd-ul li:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
