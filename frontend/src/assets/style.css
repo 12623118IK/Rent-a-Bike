@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    user-select: none;
 }
 
 * {
@@ -286,6 +287,7 @@ nav {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
+    position: relative;
 }
 
 #pricing-wrpr-text {
@@ -298,6 +300,8 @@ nav {
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(8px);
     padding: 10px;
+    transition: box-shadow 0.3s ease-in-out;
+    height: 390px;
 }
 
 .sngltrp {
@@ -305,9 +309,23 @@ nav {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(214, 214, 214, 0.9) 35%, rgba(176, 176, 176, 0.9) 100%);
 }
 
+.sngltrp:hover {
+    box-shadow: 
+    0 0 30px 5px rgba(0, 0, 0, 0.6), 
+    0 0 60px 10px rgba(0, 0, 0, 0.3);
+    border: 3px solid black; /* Optional: thin green border */
+}
+
 .dayps {
+    height: 450px;
     background: radial-gradient(circle,rgba(0, 128, 0, 0.7) 0%, rgba(33, 138, 33, 0.7) 50%, rgba(32, 87, 32, 0.7) 100%);
     border: 3px solid rgba(2, 126, 2, 0.438);
+    /* outer glow: x-offset y-offset blur spread color */
+    box-shadow: 0 0 30px 5px rgb(0 157 67 / 50%), 0 0 60px 10px rgba(46, 204, 113, 0.2);    
+}
+
+.dayps:hover {
+    border: 3px solid var(--darkgreen);
 }
 
 .p-trip {
@@ -338,7 +356,7 @@ nav {
 }
 
 .whit {
-    border: 1px solid white;
+    border: 1px solid #cdcdcd;
 }
 
 .blck {
@@ -346,7 +364,7 @@ nav {
 }
 
 .price-btns-desgn {
-    border: 3px solid white;
+    border: 3px solid black;
     border-radius: 15px;
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -355,6 +373,27 @@ nav {
     background: transparent;
 }
 
+.gdpas {
+    color: white;
+    border: 3px solid white;
+    border-bottom: 5px solid;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    background: transparent;
+}
+
+.gdpas:hover {
+    background: #cdcdcd;
+}
+
 .price-btns-desgn:hover {
     background: white;
+}
+
+#fleet {
+    height: 100vh;
+    width: 100%
 }

@@ -24,7 +24,7 @@
         <div id="nav-btns-wrpr">
           <button class="nav-btns nrmbtn" onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})">How It Works</button>
           <button class="nav-btns nrmbtn" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})">Pricing</button>
-          <button class="nav-btns nrmbtn">Fleet</button>
+          <button class="nav-btns nrmbtn" onclick="document.getElementById('fleet').scrollIntoView({behavior: 'smooth'})">Fleet</button>
           <button class="nav-btns nrmbtn">Locations</button>
           <button class="nav-btns rentbtn">Rent a Bike</button>
         </div>
@@ -119,10 +119,10 @@
     <div id="pricing"> 
       <div id="pricing-wrpr">
         <div id="pricing-wrpr-text">
-          <p style="font-size: 2rem; margin: 0px;">Chose a Ride That</p>
+          <p style="font-size: 2rem; margin-top: 10px; margin-bottom: -10px;">Chose a Ride That</p>
           <p style="font-size: 2rem; margin: 0px;">Fits Your Journey.</p>
         </div>
-        <div id="how-it-works-cards">
+        <div id="how-it-works-cards" style="height: 85%;">
           <div id="how-it-works-cards-wrpr">
             <div class="pricing-card-strr sngltrp">
               <p class="p-trip">Single Trip</p>
@@ -154,7 +154,7 @@
                 <li><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z"/></svg>Includes bycicle insurance</li>
               </ul>
               <div class="cards-btn">
-                <button class="price-btns-desgn">Get Day Pass</button>
+                <button class="gdpas">Get Day Pass</button>
               </div>
             </div>
 
@@ -176,11 +176,13 @@
             </div>
           </div>
         </div>
-        <div style="text-align: center;">
-          <p>Unlock the right weels to bring your creative city explorations to life. No contracts, change anytime.</p>
+        <div style="text-align: center; position: absolute; bottom: 5px; width: 100%; display: flex; justify-content: center;">
+          <p style="margin: 0px;">Unlock the right weels to bring your creative city explorations to life. No contracts, change anytime.</p>
         </div>
       </div>
     </div>
+
+    <div id="fleet"></div>
 
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
