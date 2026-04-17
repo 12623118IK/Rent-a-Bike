@@ -842,8 +842,6 @@ footer {
   transition: all 0.3s ease;
 }
 
-
-
 #scrollTopBtn.show {
   opacity: 1;
   visibility: visible;
