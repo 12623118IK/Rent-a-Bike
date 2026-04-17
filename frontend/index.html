@@ -22,11 +22,11 @@
       </div>
       <div id="nav-btns-dsad">
         <div id="nav-btns-wrpr">
-          <button class="nav-btns nrmbtn" onclick="document.getElementById('how-it-works').scrollIntoView({behavior: 'smooth'})">How It Works</button>
-          <button class="nav-btns nrmbtn" onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})">Pricing</button>
-          <button class="nav-btns nrmbtn" onclick="document.getElementById('fleet').scrollIntoView({behavior: 'smooth'})">Fleet</button>
-          <button class="nav-btns nrmbtn">Locations</button>
-          <button class="nav-btns rentbtn">Rent now</button>
+          <button class="nav-btns nrmbtn" data-section="how-it-works">How It Works</button>
+        <button class="nav-btns nrmbtn" data-section="pricing">Pricing</button>
+        <button class="nav-btns nrmbtn" data-section="fleet">Fleet</button>
+        <button class="nav-btns nrmbtn" data-section="locations">Locations</button>
+        <button id="rentnownavbtn" class="nav-btns rentbtn">Rent now</button>
         </div>
       </div>
     </nav>
@@ -203,22 +203,95 @@
           </ul>
         </div>
         <div id="right-side">
+        <div id="rght-side-wrp">
           <div class="frstcollumn-fleet">
-            <div class="small-fleet"></div>
-            <div class="small-fleet"></div>
+            <div class="small-fleet">
+              <img class="small-flt-img" src="/frontend/src/assets/images/city-bike.png" alt="City Bycicle">
+              <p class="flt-p">City bike</p>
+            </div>
+            <div class="small-fleet">
+              <img class="small-flt-img" src="/frontend/src/assets/images/bike-basket.png" alt="Bycicle with basket">
+              <p class="flt-p">City bike</p>
+            </div>
           </div>
           <div id="scbdcollumn-fleet">
-            <div class="big-fleet"></div>
+            <div class="big-fleet">
+              <img class="big-flt-img" src="/frontend/src/assets/images/mountain-bike.png" alt="Mountain Bycicle">
+              <div class="txt-algn-big-flt">
+                <p class="flt-p-2">Mountain Cruiser</p>
+                <p class="flt-p-2" style="width: min-content; font-size: 3rem; margin-top: -15px;">€15/day</p>
+                <button class="rentbtn bgflt">Rent Now</button>
+              </div>
+            </div>
           </div>
           <div class="frstcollumn-fleet">
-            <div class="small-fleet"></div>
-            <div class="small-fleet"></div>
+            <div class="small-fleet">
+              <img class="small-flt-img" src="/frontend/src/assets/images/shoseika.png" alt="Road Bycicle">
+              <p class="flt-p">Road bike</p>
+            </div>
+            <div class="small-fleet">
+              <img class="small-flt-img" src="/frontend/src/assets/images/kids-bike.png" alt="Kids Bycicle">
+              <p class="flt-p">Kids bike</p>
+            </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
 
     <div id="root"></div>
+    <script>
+  window.addEventListener('scroll', function() {
+  const navbar = document.querySelector('nav');
+  const scrollThreshold = window.innerHeight * 0.135; // Изчислява 13vh
+
+  if (window.scrollY > scrollThreshold) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+const navLinks = document.querySelectorAll('.nav-btns');
+
+const observer = new IntersectionObserver((entries) => {
+    let foundActive = false;
+
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            foundActive = true;
+
+            navLinks.forEach(link => {
+                link.classList.toggle(
+                    'active',
+                    link.dataset.section === entry.target.id
+                );
+            });
+        }
+    });
+
+    // 🔴 if no section is visible → remove all active states
+    if (!foundActive) {
+        navLinks.forEach(link => link.classList.remove('active'));
+    }
+
+}, {
+    threshold: 0.6
+});
+
+navLinks.forEach(link => {
+    const section = document.getElementById(link.dataset.section);
+
+    if (section) {
+        observer.observe(section);
+
+        link.addEventListener('click', () => {
+            section.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+});
+</script>
+    <footer></footer>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

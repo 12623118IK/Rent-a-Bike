@@ -27,13 +27,64 @@ html {
 
 nav {
     background: white;
-    height: auto;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 13vh;
+    padding: 0 30px;
     border-bottom: 0.1px solid var(--darkgreen);
-    align-items: center;
+    box-sizing: border-box;
+    /* IMPORTANT: define transform from start */
+    transform: translate(0, 0);
+    left: 50%;
 }
+
+/* SCROLLED NAV (floating glass style) */
+nav.scrolled {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    height: 10vh;
+    width: 65%;
+    /* START ABOVE → slide DOWN */
+    transform: translate(-50%, -120%);
+    animation: slideDown 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);    
+    z-index: 9999;
+
+    & .logo-title,
+    & #bicycle-logo {
+        font-size: 2rem;
+        margin-left: 0px;
+    }
+    & .nav-btns {
+        font-size: 1.2rem;
+    }
+    & #nav-btns-wrpr {
+        gap: 0px;
+    }
+    & #rentnownavbtn {
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+
+/* ANIMATION FROM TOP */
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -120%);
+    }
+    to {
+        transform: translate(-50%, 0);
+    }
+}
+
 
 .logo-title {
     font-size: 4rem;
@@ -82,6 +133,7 @@ nav {
 #nav-btns-wrpr {
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
 .nav-btns {
@@ -95,6 +147,26 @@ nav {
     display: flex;
     align-items: center;
     gap: 5px;
+    height: min-content;
+    position: relative;
+}
+
+.nav-btns::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: currentColor;
+    transition: transform 0.3s ease-out;
+    transform-origin: bottom right;
+}
+
+.nav-btns.active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .nrmbtn:hover {
@@ -441,7 +513,7 @@ nav {
 }
 
 #fllet-hero {
-    height: 35%;
+    height: 40%;
     width: 80%;
     background-image: url(/frontend/src/assets/images/riding-pov.png);
     background-position: center;
@@ -471,7 +543,7 @@ nav {
 
 #secdn-part {
     width: 85%;
-    height: 65%;
+    height: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -480,18 +552,25 @@ nav {
 }
 
 #left-side {
-    width: 15%;
+    width: 13%;
     height: 100%;
-    background: white;
+    background: transparent;
 }
 
 #right-side {
-    width: 80%;
+    width: 81%;
     height: 100%;
-    background: white;
+    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#rght-side-wrp {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    gap: 10px;
 }
 
 .lefts-sd-ul {
@@ -530,13 +609,90 @@ nav {
 }
 
 .frstcollumn-fleet {
-    width: 30%;
+    width: 25%;
     height: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    gap: 10px;
 }
 
 #scbdcollumn-fleet {
-    width: 40%;
+    width: 50%;
     height: 100%;
+}
+
+.big-fleet {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.big-fleet:hover {
+    box-shadow: 0 0 30px 5px rgb(125 125 125 / 60%), 0 0 60px 10px rgb(171 171 171 / 30%)
+}
+
+.big-flt-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: left center;
+}
+
+.small-fleet {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.small-fleet:hover {
+    box-shadow: 0 0 30px 5px rgb(125 125 125 / 60%), 0 0 60px 10px rgb(171 171 171 / 30%)
+}
+
+.small-flt-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: right center;
+}
+
+.flt-p {
+    z-index: 999;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: var(--darkgreen);
+    margin: 0px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(3px);
+    font-size: 1.3rem;
+    padding: 0px 5px;
+}
+
+.txt-algn-big-flt {
+    font-size: 2rem;
+    z-index: 999;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    margin: 0px;
+    background: transparent;
+}
+
+.flt-p-2 {
+    font-size: 2rem;
+    margin: 0px;
+}
+
+.bgflt {
+    cursor: pointer;
+    border: none;
+    font-size: 1.5rem;
+    background: var(--darkgreen);
 }
