@@ -15,7 +15,8 @@ html {
 }
 
 :root {
-    --darkgreen: #0a440a
+    --darkgreen: #0a440a;
+    --milkgreen: #e4ffe4;
 }
 
 .funnel-display {
@@ -72,6 +73,7 @@ nav.scrolled {
     & #rentnownavbtn {
         padding: 5px;
         border-radius: 5px;
+        margin-left: 5px;
     }
 }
 
@@ -695,4 +697,126 @@ nav.scrolled {
     border: none;
     font-size: 1.5rem;
     background: var(--darkgreen);
+}
+
+#locations {
+    height: 100vh;
+    width: 100%;
+    background: var(--milkgreen);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+#ifrm {
+    border: 3px solid var(--darkgreen);
+    border-radius: 15px;
+    margin: 0px auto;
+    display: flex;
+    width: 80%;
+    height: 80%;
+}
+
+footer {
+    background: var(--milkgreen);
+    color: var(--darkgreen);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-wrp {
+    background: #0a440a3b;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+#ftr-clms {
+    display: flex;
+    justify-content: center;
+}
+
+#ftr-links {
+    display: flex;
+}
+
+.downapp {
+    height: 30px;
+}
+
+.ftr-ul li:first-of-type {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.ftr-ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.ftr-ul:last-of-type {
+    padding-right: 20px;
+}
+
+.ftr-ul li a {
+    text-decoration: none;
+    color: var(--darkgreen);
+}
+
+.ftr-ul li button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--darkgreen);
+    padding: 0px;
+    font-size: 1rem
+}
+
+.ftr-ul li button:hover {
+    color: green;
+}
+
+.ftr-ul li {
+    padding-bottom: 3px;
+}
+
+.ftr-ul li a:hover {
+    color: green;
+}
+
+#thrdcolmnftr {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 5px;
+}
+
+.social-icons a {
+    color: var(--darkgreen);
+}
+
+.social-icons svg {
+  width: 1.8rem;
+  height: 1.8rem;
+  fill: currentColor;
+  cursor: pointer;
+}
+
+.social-icons svg:hover {
+    fill: green;
 }
